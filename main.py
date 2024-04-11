@@ -3,7 +3,11 @@ import coordinates
 from pathlib import Path
 
 path = Path('visited-parks.ods')
-parkNames = parkNames.getParkNames(path)
+parkNamesList = parkNames.getParkNames(path)
 
-for item in parkNames:
-  print(coordinates.getCoordinates(item))
+parkData = []
+for item in parkNamesList:
+  parkData.append(coordinates.getCoordinates(item))
+
+output = parkNames.addCoordinatesToFile(path, parkData)
+print(output)

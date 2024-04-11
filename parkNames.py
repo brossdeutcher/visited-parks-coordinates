@@ -10,3 +10,6 @@ def getParkNames(file):
   parkFullNames = [str1 + ' ' + str2 for str1, str2 in zip(parkShortenedNames, governingBodies)]
   
   return parkFullNames
+
+def addCoordinatesToFile(file, parkData):
+  return parkData
