@@ -6,4 +6,4 @@ path = Path('C:/Users/blake/Documents/Tableau/visited-parks/visited-parks.odf')
 parkNames = parkNames.getParkNames(path)
 
 for item in parkNames:
-  coordinates.getCoordinates(item)
+  print(coordinates.getCoordinates(item))
