@@ -18,6 +18,7 @@ def getCoordinates(parkName):
       for row in rows:
         if 'coordinates' in row.text.lower():
           coordinates = row.find('span', class_='geo-dec').text
-          coordinateList = coordinates.split()
+          latitude = coordinates.split()[0]
+          longitude = coordinates.split()[1]
 
-          return {parkName: coordinateList}
+          return {parkName: [latitude, longitude]}
