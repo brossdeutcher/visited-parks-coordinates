@@ -18,7 +18,9 @@ def getCoordinates(parkName):
       for row in rows:
         if 'coordinates' in row.text.lower():
           coordinates = row.find('span', class_='geo-dec').text
-          latitude = coordinates.split()[0]
-          longitude = coordinates.split()[1]
+          latitudeStr = coordinates.split()[0]
+          latitude = float(latitudeStr.split('°')[0]) if latitudeStr.split('°')[1] == 'N' else float(latitudeStr.split('°')[0]) * -1
+          longitudeStr = coordinates.split()[1]
+          longitude = float(longitudeStr.split('°')[0]) if longitudeStr.split('°')[1] == 'N' else float(longitudeStr.split('°')[0]) * -1
 
           return {parkName: [latitude, longitude]}
