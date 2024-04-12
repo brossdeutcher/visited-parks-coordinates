@@ -1,12 +1,12 @@
-import parkNames
-import coordinates
+import fileHandler
+import webScraper
 from pathlib import Path
 
 path = Path('visited-parks.ods')
-parkNamesList = parkNames.getParkNames(path)
+parkNamesList = fileHandler.getParkNames(path)
 
 parkData = []
 for item in parkNamesList:
-  parkData.append(coordinates.getData(item))
+  parkData.append(webScraper.getData(item))
 
-output = parkNames.addDataToFile(path, parkData)
+output = fileHandler.addDataToFile(path, parkData)
