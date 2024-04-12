@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-def getCoordinates(parkName):
+def getData(parkName):
   # replaces spaces in park name with underscore to match url formatting
   park_name = parkName.replace(' ', '_')
   url = f'https://en.wikipedia.org/wiki/{park_name}'

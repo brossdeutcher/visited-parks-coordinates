@@ -7,6 +7,6 @@ parkNamesList = parkNames.getParkNames(path)
 
 parkData = []
 for item in parkNamesList:
-  parkData.append(coordinates.getCoordinates(item))
+  parkData.append(coordinates.getData(item))
 
-output = parkNames.addCoordinatesToFile(path, parkData)
+output = parkNames.addDataToFile(path, parkData)

@@ -11,7 +11,8 @@ def getParkNames(file):
   
   return parkFullNames
 
-def addCoordinatesToFile(file, parkData):
+# town, elevation, biome, year est, area
+def addDataToFile(file, parkData):
   df = pd.read_excel(file, engine='odf')
   latitudes = []
   longitudes = []
